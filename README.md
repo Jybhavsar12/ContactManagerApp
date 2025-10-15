@@ -182,7 +182,7 @@ npm install --legacy-peer-deps
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Jyot Harshadkumar Bhavsar**
 - GitHub: [@Jybhavsar12](https://github.com/Jybhavsar12)
 
 
