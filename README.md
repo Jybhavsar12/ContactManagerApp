@@ -1,97 +1,194 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Contact Manager App
 
-# Getting Started
+A comprehensive React Native contact management application with full CRUD functionality, search capabilities, and accessibility compliance.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 📱 Screenshots
 
-## Step 1: Start Metro
+| Contact List | Contact Details | Add/Edit Contact |
+|--------------|-----------------|------------------|
+| ![Contact List](screenshots/contact-list.png) | ![Contact Details](screenshots/contact-details.png) | ![Add Contact](screenshots/add-contact.png) |
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## ✨ Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Core Functionality
+- ✅ **Contact List**: View all contacts with search and filtering
+- ✅ **Add/Edit Contacts**: Full form validation and error handling
+- ✅ **Contact Details**: Comprehensive contact information display
+- ✅ **Delete Contacts**: Safe deletion with confirmation dialogs
+- ✅ **Favorites**: Mark contacts as favorites with visual indicators
+- ✅ **Communication**: Direct call, SMS, and email integration
 
-```sh
-# Using npm
-npm start
+### Technical Features
+- ✅ **Data Persistence**: AsyncStorage for offline data storage
+- ✅ **Search & Filter**: Real-time contact search functionality
+- ✅ **Form Validation**: Comprehensive input validation with error feedback
+- ✅ **Navigation**: Stack navigation with proper screen transitions
+- ✅ **Performance**: Optimized FlatList rendering and React.memo
+- ✅ **Accessibility**: Full screen reader and keyboard navigation support
+- ✅ **Vector Icons**: Material Design icons throughout the app
 
-# OR using Yarn
-yarn start
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (>= 18)
+- React Native CLI
+- Android Studio (for Android development)
+- Xcode (for iOS development)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Jybhavsar12/ContactManagerApp.git
+   cd ContactManagerApp
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+3. **Install iOS dependencies** (iOS only)
+   ```bash
+   cd ios && pod install && cd ..
+   ```
+
+4. **Run the application**
+   ```bash
+   # For Android
+   npm run android
+   
+   # For iOS
+   npm run ios
+   ```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   └── common/
+│       ├── CustomButton.js      # Reusable button component
+│       ├── CustomInput.js       # Form input component
+│       ├── ContactListItem.js   # Contact list item component
+│       └── LoadingSpinner.js    # Loading indicator
+├── screens/
+│   ├── ContactList/
+│   │   └── ContactListScreen.js # Main contact list with search
+│   ├── ContactDetails/
+│   │   └── ContactDetailsScreen.js # Contact details and actions
+│   └── AddContact/
+│       └── AddContactScreen.js  # Add/edit contact form
+├── navigation/
+│   └── AppNavigator.js          # Stack navigation setup
+├── utils/
+│   └── ContactContext.js        # Global state management
+├── data/
+│   └── contactsData.js          # Sample data and utilities
+└── styles/
+    └── globalStyles.js          # Global styling constants
 ```
 
-## Step 2: Build and run your app
+## 🛠️ Tech Stack
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- **Framework**: React Native 0.82.0
+- **Navigation**: React Navigation 6
+- **State Management**: Context API + AsyncStorage
+- **Icons**: React Native Vector Icons (Material Design)
+- **Storage**: AsyncStorage for data persistence
+- **Platform**: iOS & Android
 
-### Android
+## 🎯 Key Features Demo
 
-```sh
-# Using npm
-npm run android
+### Contact Management
+- **Add Contact**: Complete form with validation
+- **Edit Contact**: Pre-filled form with existing data
+- **Delete Contact**: Confirmation dialog for safety
+- **Search**: Real-time filtering by name, phone, email, company
 
-# OR using Yarn
-yarn android
+### Communication Integration
+- **Call**: Direct phone calls via device dialer
+- **SMS**: Open messaging app with contact number
+- **Email**: Launch email client with contact address
+
+### User Experience
+- **Favorites**: Toggle favorite status with visual feedback
+- **Accessibility**: Screen reader support and keyboard navigation
+- **Performance**: Smooth scrolling with optimized rendering
+
+## 🧪 Testing
+
+### Manual Testing Checklist
+- [ ] Add new contact with all fields
+- [ ] Edit existing contact information
+- [ ] Delete contact with confirmation
+- [ ] Search contacts by various criteria
+- [ ] Toggle favorite status
+- [ ] Test call, message, email functionality
+- [ ] Validate form inputs (empty fields, invalid formats)
+- [ ] Test accessibility with screen reader
+- [ ] Verify keyboard navigation
+
+### Performance Testing
+- [ ] Smooth scrolling with 100+ contacts
+- [ ] Fast search response time
+- [ ] Memory usage optimization
+- [ ] App startup time
+
+## 🔧 Configuration
+
+### Vector Icons Setup
+The app uses Material Design icons. They're automatically configured for iOS via CocoaPods. For Android, the configuration is already included in `android/app/build.gradle`.
+
+### AsyncStorage
+Data persistence is handled automatically. The app will create sample contacts on first launch and maintain them between sessions.
+
+## 🚨 Troubleshooting
+
+### Common Issues
+
+**Icons not showing on Android:**
+```bash
+cd android && ./gradlew clean && cd ..
+npx react-native run-android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+**Metro bundler issues:**
+```bash
+npx react-native start --reset-cache
 ```
 
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
+**iOS build issues:**
+```bash
+cd ios && pod install && cd ..
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+**Dependency conflicts:**
+```bash
+npm install --legacy-peer-deps
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🤝 Contributing
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Step 3: Modify your app
 
-Now that you have successfully run the app, let's make changes!
+## 👨‍💻 Author
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+**Your Name**
+- GitHub: [@Jybhavsar12](https://github.com/Jybhavsar12)
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🙏 Acknowledgments
 
-## Congratulations! :tada:
+- React Native community for excellent documentation
+- Material Design for icon guidelines
+- React Navigation team for smooth navigation experience
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+⭐ Star this repo if you found it helpful!
