@@ -5,8 +5,11 @@ A comprehensive React Native contact management application with full CRUD funct
 ## 📱 Screenshots
 
 | Contact List | Contact Details | Add/Edit Contact |
-|--------------|-----------------|------------------|
-| ![Contact List](screenshots/contact-list.png) | ![Contact Details](screenshots/contact-details.png) | ![Add Contact](screenshots/add-contact.png) |
+|--
+------------|-----------------|------------------|
+|![answer 2025-10-15 at 1 35 46 PM](https://github.com/user-attachments/assets/ef5f5b87-6a30-499f-b73e-c41f56f81680)| ![answer 2025-10-15 at 1 08 37 PM](https://github.com/user-attachments/assets/9dab2361-ff58-44c9-8bba-1c8b7d41d645)
+ | ![answer 2025-10-15 at 1 07 57 PM](https://github.com/user-attachments/assets/45b8501e-4fca-42c3-8501-3fc50f2adb9d) |
+
 
 ## ✨ Features
 
@@ -183,12 +186,7 @@ npm install --legacy-peer-deps
 - GitHub: [@Jybhavsar12](https://github.com/Jybhavsar12)
 
 
-## 🙏 Acknowledgments
 
-- React Native community for excellent documentation
-- Material Design for icon guidelines
-- React Navigation team for smooth navigation experience
 
 ---
 
-⭐ Star this repo if you found it helpful!
